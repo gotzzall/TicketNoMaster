@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+{% block body %}
+
+    {% for registro in registros %}
+
+        {% if registro.estado==1 %}
+            <div>
+                <p>{{ registro.usuario }} | {{ registro.tipo }} | activo <a href="">actualizar</a> <a href="">eliminar</a></p>
+            </div>
+        {% elseif registro.estado==0 %}
+            <div>
+                <p>{{ registro.usuario }} | {{ registro.tipo }} | inactivo</p>
+            </div>
+        {% endif %}
+    {% endfor %}
+
+{% endblock %}

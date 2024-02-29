@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    {% if aviso %}
+        <p>{{ mensaje }}</p>
+    {% endif %}
+    <h1 class="bg-primary">hola mundo</h1>
+    <form action="{{ path('validar_login') }}"  method="post">
+        <fieldset class="bg-primary">
+            <legend>Login</legend>
+            <input type="text" placeholder="User" name="user" required>
+            <input type="password" placeholder="Password" name="pass" required>
+            <button type="submit">Submit</button>
+        </fieldset>
+    </form>
+{% endblock %}
