@@ -1,15 +1,48 @@
 {% extends "base.html.twig" %}
 {% block body %}
     {% if aviso %}
-        <p>{{ mensaje }}</p>
+        <div class="alert alert-danger text-center" role="alert">
+            {{ mensaje }}
+        </div>
     {% endif %}
-    <h1 class="bg-primary">hola mundo</h1>
-    <form action="{{ path('validar_login') }}"  method="post">
-        <fieldset class="bg-primary">
-            <legend>Login</legend>
-            <input type="text" placeholder="User" name="user" required>
-            <input type="password" placeholder="Password" name="pass" required>
-            <button type="submit">Submit</button>
-        </fieldset>
-    </form>
+    <div class="container-fluid d-flex align-items-center justify-content-center">
+        <div class="row">
+            <div class="col">
+                <div class="card shadow text-center" style="width: 30rem; height: 23rem">
+                    <div class="card-body">
+                        <form action="{{ path('validar_login') }}"  method="post">
+                            <fieldset>
+                                <h1 class="fs-1">Login</h1>
+                                <div class="col mt-4">
+                                    <input type="text" placeholder="User" name="user" required class="fs-4 form-control form-control-lg mt-4 shadow-sm">
+                                </div>
+                                <div class="col mt-4">
+                                    <input type="password" placeholder="Password" name="pass" required class="fs-4 form-control form-control-lg mt-4 shadow-sm">
+                                </div>
+                                <div class="col mt-5">
+                                    <button type="submit" class="btn btn-primary btn-lg shadow">Submit</button>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <style>
+        body {
+          font-size: 1.2rem; /* Ajusta el tamaño de la fuente del cuerpo */
+        }
+        
+        .card {
+          margin-top: 2rem; /* Ajusta el margen superior de la tarjeta */
+        }
+    
+        .form-group {
+          margin-bottom: 1.5rem; /* Ajusta el margen inferior de los elementos del formulario */
+        }
+      </style>
+    
 {% endblock %}
